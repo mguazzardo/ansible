@@ -1,0 +1,11 @@
+---
+ - hosts: servers
+   become: true
+   tasks:
+    - name: "Incluir variables"
+      include_vars: vars/users.yml
+    - name: "Generar Usuario"
+      user:
+        name: " {{ user }}"
+        comment: usuario
+        uid: 1040
